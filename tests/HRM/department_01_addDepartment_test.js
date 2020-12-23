@@ -1,11 +1,7 @@
-Feature('AddDepartment');
+Feature('Department');
 
-Scenario('AddDepartment', (I) => {
-I.amOnPage('/test6/wp-admin/');
-I.fillField('Username or Email Address','admin')
-I.fillField('Password','admin')
-I.checkOption('Remember Me')
-I.click('Log In')
+Scenario('addDepartment', ({ I }) => {
+I.loginAsAdmin()
 I.click('WP ERP')
 I.click('HR')
 I.click('//*[@id="wpbody-content"]/div[2]/ul/li[3]/a')
@@ -16,6 +12,6 @@ I.click('//*[@id="dept-lead"]')
 I.click('//*[@id="dept-lead"]/option[2]')
 I.click('//*[@id="dept-parent"]')
 I.click('Create Department')
+I.see('Departments')
 
-pause();
-});
+})

@@ -5,13 +5,16 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
-  tests: 'tests/**/*_test.js',
+  tests: 'tests/**/*_test.js', //
   output: './output',
   helpers: {
     WebDriver: {
       url: 'https://erpqa.ajaira.website',
       browser: 'chrome',
       windowSize: "maximize",
+      smartWait: 5000,
+      waitForAction:3000,	
+      //keepCookies: true,
     }
   },
   include: {
